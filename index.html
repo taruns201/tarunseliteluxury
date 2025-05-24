@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarunsluxuryservices</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Strategic support and seamless execution tailored for the world of high-end hospitality and elite living.">
+    <meta name="keywords" content="Elegant remote estate operations interface, Luxury calendar coordination system, Discreet remote guest messaging preview, Performance dashboard for premium Airbnb rentals, Luxury remote property management, Premium estate operations support, Airbnb optimization services, Remote guest communication expert, Virtual villa management, High-end rental performance strategies, Discreet digital systems for vacation homes, Luxury Property Management, High-End Guest Experience, Estate Operations, Concierge Property Support, Luxury Rental Optimization, Short-Term Luxury Rental Strategy, High-Performance Property, Elite Clientele Management, Luxury Digital Concierge, Bespoke Tech for Real Estate, CRM for High-End Rentals, Digital Transformation for Luxury Brands, Luxury Experience Strategy, Revenue Growth for High-End Rentals, Premium Hospitality Consulting, Bespoke Guest Journey Design">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for the modifications */
+        
+        /* Reduce the size of the about image */
+        .about-image .image-container {
+            width: 400px;
+            height: 400px;
+        }
+        
+        /* Enhanced Get In Touch section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-item:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .contact-item .icon {
+            width: 6rem;
+            height: 6rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.4rem;
+            margin-right: 2.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(178, 133, 56, 0.3);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .contact-item:hover .icon {
+            transform: translateY(-5px);
+            background-color: var(--primary-dark);
+        }
+        
+        .contact-item .text {
+            flex-grow: 1;
+        }
+        
+        .contact-item .text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--white);
+        }
+        
+        .contact-item .text p {
+            color: var(--light-gray);
+            font-size: 1.8rem;
+            margin-bottom: 0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+        
+        .social-link {
+            width: 5rem;
+            height: 5rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 5px 15px rgba(178, 133, 56, 0.3);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-8px);
+            background-color: var(--primary-dark);
+        }
+        
+        /* Performance Metrics Styling */
+        #circular-chart-container {
+            display: block !important;
+            background-color: var(--metrics-bg);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        /* Hide chart container */
+        #chart-container {
+            display: none !important;
+        }
+        
+        /* Custom bullet points for services */
+        .service-bullet {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+        
+        .service-bullet-icon {
+            color: var(--primary-color);
+            margin-right: 1rem;
+            font-size: 1.4rem;
+            margin-top: 0.3rem;
+        }
+        
+        .service-bullet-text {
+            flex: 1;
+        }
+        
+        /* Contact intro text */
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--white);
+            max-width: 80rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-intro p {
+            font-size: 2rem;
+            line-height: 1.6;
+            color: var(--light-gray);
+        }
+        
+        @media screen and (max-width: 992px) {
+            .about-image .image-container {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1 / 1;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            
+            .contact-info {
+                order: 2;
+            }
+            
+            .contact-form {
+                order: 1;
+            }
+        }
+        
+        @media screen and (max-width: 576px) {
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-item .icon {
+                margin-right: 0;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg class="airplane" viewBox="0 0 100 100">
+                <path d="M10,50 L30,35 L70,35 L90,50 L70,65 L30,65 Z" />
+                <path class="wing-top" d="M30,35 L50,15 L70,35" />
+                <path class="wing-bottom" d="M30,65 L50,85 L70,65" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Animated Background -->
+    <div class="animated-dots"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="TARUNS Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="slideshow-container">
+            <div class="slide active"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="reveal-text">TARUNS — Precision Support for the World's Most Discerning</h1>
+                <div class="hero-description reveal-text delay-1">
+                    <p>Remote. Discreet. Seamlessly Executed.  
+                    </p>
+                    <p>In your world, perfection is the baseline. We ensure everything beneath it runs 
+flawlessly—discreetly, remotely, and without disruption. From daily estate operations to 
+guest messaging, we handle the unseen so you can focus on the exceptional.
+                    </p>
+                    <!-- <p>Through discreet, high-performance remote operations, we perfect experiences, streamline success, and embody the sophistication your world demands.
+                    </p>
+                    <p>Because true luxury isn't created — it's crafted.</p> -->
+                </div>
+                <div class="cta-container reveal-opacity delay-2">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="reveal-text">About</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-image reveal-slide-right">
+                    <div class="image-container">
+                        <img src="tarun.jpg" alt="Profile Image">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+                <div class="about-text reveal-slide-left">
+                    <h3>Precision. Imagination. Global Vision.</h3>
+                    <p>Rooted in Aerospace Engineering and fueled by a passion for refined living, Tarun Sunkara merges analytical precision with creative strategy to deliver seamless remote luxury services. Every solution enhances operations, elevates guest experiences, and embodies the sophistication discerning clients expect.</p>
+                    <p>Guided by a global perspective and a commitment to quiet excellence, Tarun crafts systems that feel effortless yet extraordinary.
+                    </p>
+                    <p>This is more than support — it's the art of anticipating needs before they arise, and delivering excellence before it's asked.</p>
+                    <!-- <div class="stats">
+                        <div class="stat-item">
+                            <span>Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Satisfied Clients</span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="animated-dots"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="reveal-text">Projects</h2>
+                <div class="underline"></div>
+            </div>
+            <!-- Removed project filters as requested -->
+            <div class="projects-grid">
+                <div class="project-item management reveal-scale" data-category="management">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="agro2.jpg" alt="SBL Agro Farms & Developers">
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>SBL Agro Farms & Developers</h3>
+                                <p>Category: Lifestyle & Investment</p>
+                                <a href="#" class="project-link">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item luxury reveal-scale delay-2" data-category="luxury">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="lamp.jpg" alt="Luxury Digital Solutions">
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Luxury Digital Solutions</h3>
+                                <p>Category: Luxury Branding</p>
+                                <a href="#" class="project-link">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item luxury reveal-scale delay-3" data-category="luxury">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="room.jpg" alt="Elite Rentals">
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Elite Rentals</h3>
+                                <p>Category: Premium Rentals & Tech Enablement</p>
+                                <a href="#" class="project-link">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item luxury reveal-scale delay-3" data-category="luxury">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="ship.jpg" alt="Remote Luxury Ops">
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Remote Luxury Ops</h3>
+                                <p>Category: Lifestyle Management</p>
+                                <a href="#" class="project-link">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Images Section -->
+    <section class="brand-images">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="reveal-text">Elevated Living</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="brand-images-container">
+                <div class="brand-images-track">
+                    <!-- First set of brand images -->
+                    <div class="brand-image-item up">
+                        <img src="galary1.jpg" alt="Brand 1" >
+                    </div>
+                    <div class="brand-image-item down">
+                        <img src="galary6.jpg" alt="Brand 2">
+                    </div>
+                    <div class="brand-image-item up">
+                        <img src="galary8.jpg" alt="Brand 3">
+                    </div>
+                    <div class="brand-image-item down">
+                        <img src="galary5.jpg" alt="Brand 4">
+                    </div>
+                    <!-- <div class="brand-image-item up">
+                        <img src="/placeholder.svg?height=150&width=250" alt="Brand 5">
+                    </div> -->
+                    <!-- Duplicate set for infinite scroll -->
+                    <div class="brand-image-item up">
+                        <img src="galary1.jpg" alt="Brand 1">
+                    </div>
+                    <div class="brand-image-item down">
+                        <img src="galary6.jpg" alt="Brand 2">
+                    </div>
+                    <div class="brand-image-item up">
+                        <img src="galary8.jpg" alt="Brand 3">
+                    </div>
+                    <div class="brand-image-item down">
+                        <img src="galary5.jpg" alt="Brand 4">
+                    </div>
+                    <!-- <div class="brand-image-item up">
+                        <img src="/placeholder.svg?height=150&width=250" alt="Brand 5">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="project-details">
+                    <h2 id="modal-title">Project Title</h2>
+                    <div class="project-info-grid">
+                        <div class="project-image-large">
+                            <img id="modal-image" src="images/project1.jpg" alt="Project Image">
+                        </div>
+                        <div class="project-description">
+                            <h3>Project Overview</h3>
+                            <p id="modal-description">Project description will appear here.</p>
+                            <div class="project-meta">
+                                <div class="meta-item">
+                                    <h4>Client</h4>
+                                    <p id="modal-client">Client name</p>
+                                </div>
+                                <div class="meta-item">
+                                    <h4>Services</h4>
+                                    <p id="modal-services">Services provided</p>
+                                </div>
+                                <div class="meta-item">
+                                    <h4>Category</h4>
+                                    <p id="modal-year">Category</p>
+                                </div>
+                            </div>
+                            <!-- Removed view more button as requested -->
+                        </div>
+                    </div>
+                    <!-- Performance metrics section - now always visible -->
+                    <div id="more-content-section">
+                        <div id="image-container">
+                            <!-- Images will be dynamically added here -->
+                        </div>
+                        <div id="chart-container">
+                            <!-- Bar chart will be dynamically created here -->
+                        </div>
+                        <div id="circular-chart-container">
+                            <!-- Circular charts will be dynamically created here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="animated-dots"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="reveal-text">What We Deliver</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="tagline reveal-opacity">
+                <h3 style="text-align: center;font-size: 24px;font-weight: 500;">Strategic support and seamless execution tailored for the world of high-end hospitality and elite living.</h3>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1: Image left, content right -->
+                <div class="service-item reveal-slide-up">
+                    <div class="service-image">
+                        <img src="deliver4.jpg" alt="Estate Operations">
+                    </div>
+                    <div class="service-content">
+                        <h3>LUXURY PROPERTY & ESTATE FLOW MANAGEMENT</h3>
+                        <p>Let every check-in, clean, and calendar align like clockwork—without you lifting a finger. 
+                        We streamline operations for private estates, villas, and high-end rentals:</p>
+                        <div class="service-bullet">
+                            <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="service-bullet-text">Remote guest arrivals and departures</div>
+                        </div>
+                        <div class="service-bullet">
+                            <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="service-bullet-text">Cleaning, maintenance, and vendor scheduling</div>
+                        </div>
+                        <div class="service-bullet">
+                            <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="service-bullet-text">Unified calendars and occupancy control</div>
+                        </div>
+                        <p>Every element works in sync—so you remain hands-off, yet fully in control.</p>
+                    </div>
+                </div>
+                <!-- Service 2: Image right, content left -->
+                <div class="service-item reveal-slide-up delay-1 reverse">
+                    <div class="service-image">
+                        <img src="delivernew3.jpg" alt="Luxury Rental Performance">
+                    </div>
+                    <div class="service-content">
+                        <h3>INTELLIGENT RENTAL PERFORMANCE TUNING</h3>
+                        <p>Watch your listing rise in rankings—and revenue—without touching a thing. 
+                        Your property should reflect its true value. We elevate your rental's performance with:</p>
+                        <div class="service-bullet">
+                            <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="service-bullet-text">Smart pricing and competitive strategies</div>
+                        </div>
+                        <div class="service-bullet">
+                            <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="service-bullet-text">Visual listing optimization for top-tier appeal</div>
+                        </div>
+                        <div class="service-bullet">
+                            <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="service-bullet-text">Performance insights and booking trends</div>
+                        </div>
+                        <p>The result? More bookings. Better guests. Less stress.</p>
+                    </div>
+                </div>
+                <!-- Service 3: Image left, content right -->
+                <div class="service-item reveal-slide-up delay-2">
+                    <div class="service-image">
+                        <img src="delivernew1.jpg" alt="Digital Ecosystems">
+                    </div>
+                    <div class="service-content">
+                        <h3>REMOTE SYSTEMS BUILT FOR CALM CONTROL</h3>
+                        <p>Digital precision without digital noise. 
+                        We build simple, powerful systems to manage everything behind the scenes:</p>
+                        <div class="service-bullet">
+                            <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="service-bullet-text">Visual dashboards for bookings and maintenance</div>
+                        </div>
+                        <div class="service-bullet">
+                            <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="service-bullet-text">Scheduled guest messaging flows</div>
+                        </div>
+                        <div class="service-bullet">
+                            <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="service-bullet-text">Automated reminders, to-do alignment, and calendar syncing</div>
+                        </div>
+                        <p>Think of it as your virtual control room—built for peace of mind.</p>
+                    </div>
+                </div>
+                <!-- Service 4: Image right, content left -->
+                <div class="service-item reveal-slide-up delay-3 reverse">
+                    <div class="service-image">
+                        <img src="delivernew2.jpg" alt="Luxury Experiences">
+                    </div>
+                    <div class="service-content">
+                        <h3>TAILORED GUEST RELATIONS THAT FEEL PERSONAL</h3>
+                        <p>Hospitality with heart—executed virtually. 
+                        We manage every guest interaction with warmth and professionalism:</p>
+                        <div class="service-bullet">
+                            <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="service-bullet-text">Lightning-fast replies with a personal touch</div>
+                        </div>
+                        <div class="service-bullet">
+                            <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="service-bullet-text">Custom recommendations and thoughtful support</div>
+                        </div>
+                        <div class="service-bullet">
+                            <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="service-bullet-text">Proactive communication aligned with your brand tone</div>
+                        </div>
+                        <p>Guest loyalty is built on moments. We make each one count.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Redesigned Process Section -->
+            <div class="process-section reveal-opacity">
+                <h3>Our Process: Tailored, Precise, Discreet</h3>
+                <div class="process-container">
+                    <div class="process-item">
+                        <div class="process-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="process-step">01</div>
+                        <div class="process-content">
+                            <h4>PRIVATE DISCOVERY</h4>
+                            <p>"We begin with your vision—so the system fits like a glove."
+                            <br>An intentional 1-on-1 session to understand your lifestyle rhythm, values, and goals.</p>
+                        </div>
+                    </div>
+                    <div class="process-item">
+                        <div class="process-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div class="process-step">02</div>
+                        <div class="process-content">
+                            <h4>THE PRECISION BLUEPRINT™</h4>
+                            <p>"Clarity over clutter. Systems that serve, not stress."
+                            <br>We design your customized plan with zero fluff—just practical, high-functioning strategies that 
+                            work silently in the background.</p>
+                        </div>
+                    </div>
+                    <div class="process-item">
+                        <div class="process-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="process-step">03</div>
+                        <div class="process-content">
+                            <h4>SEAMLESS INTEGRATION</h4>
+                            <p>"Precision setup. No friction."
+                            <br>We discreetly implement your tools, communication flows, and automations with zero disruption 
+                            to your day.</p>
+                        </div>
+                    </div>
+                    <div class="process-item">
+                        <div class="process-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="process-step">04</div>
+                        <div class="process-content">
+                            <h4>EVOLVING PARTNERSHIP</h4>
+                            <p>"Quiet excellence, long-term."
+                            <br>You receive continuous executive support through:</p>
+                            <div class="service-bullet">
+                                <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                                <div class="service-bullet-text">Monthly performance audits</div>
+                            </div>
+                            <div class="service-bullet">
+                                <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                                <div class="service-bullet-text">Guest experience reviews</div>
+                            </div>
+                            <div class="service-bullet">
+                                <div class="service-bullet-icon"><i class="fas fa-diamond"></i></div>
+                                <div class="service-bullet-text">Adaptive system upgrades</div>
+                            </div>
+                            <p>We grow and adjust with you—quietly, efficiently, and always in sync.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="reveal-text">Brands</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="brands-slider">
+                <div class="brands-track">
+                    <!-- First set of brands -->
+                    <div class="brand-item">
+                        <span>SBL Agro Farms</span>
+                    </div>
+                    <div class="brand-item">
+                        <span>Elite Rentals</span>
+                    </div>
+                    <div class="brand-item">
+                        <span>Luxury Digital</span>
+                    </div>
+                    <div class="brand-item">
+                        <span>Remote Luxury Ops</span>
+                    </div>
+                    <div class="brand-item">
+                        <span>Premium Hospitality</span>
+                    </div>
+                    <!-- Duplicate set for infinite scroll -->
+                    <div class="brand-item">
+                        <span>SBL Agro Farms</span>
+                    </div>
+                    <div class="brand-item">
+                        <span>Elite Rentals</span>
+                    </div>
+                    <div class="brand-item">
+                        <span>Luxury Digital</span>
+                    </div>
+                    <div class="brand-item">
+                        <span>Remote Luxury Ops</span>
+                    </div>
+                    <div class="brand-item">
+                        <span>Premium Hospitality</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="reveal-text">Client Testimonials</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p>"Buen día , el haber tenido la oportunidad de trabajar con el señor Sunkara ha sido una experiencia maravillosa, al aportar su conocimiento en literatura y combinar su pasión por la escritura . His experienced in projects are really awesome , he Is always available to the needs of they costumers for that reasons and more I highly reccomended Sunkara. Please take him for your team work and you will see the awesome Job he Can make yo your projects and companies. "</p>
+                            <div class="testimonial-author">
+                                <h4>Lourdes P.</h4>
+                                <p>Team leader projects Aug 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p>"Working with Tarun has been a fantastic experience. Over the past six years, his passion for book reviews, writing, and publishing has been evident. His writing skills are exceptional, consistently delivering high-quality, well-researched, and engaging content. Tarun's ability to adapt to our needs and his expertise in SEO have significantly enhanced our content strategy and online visibility. His professionalism, punctuality, and dedication make him an invaluable partner. I highly recommend Tarun for anyone seeking outstanding writing services"</p>
+                            <div class="testimonial-author">
+                                <h4>Kiran K.</h4>
+                                <p>Jul 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p>The expertise and professionalism demonstrated by the team at Taruns Luxury Services is unmatched. They've elevated our property management to an art form.</p>
+                            <div class="testimonial-author">
+                                <h4>Jonathan Blackwell</h4>
+                                <p>Estate Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="reveal-text">Get In Touch</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <!-- Added contact intro text -->
+            <div class="contact-intro reveal-opacity">
+                <p>Ready to Experience Invisible Excellence?<br>
+                Let us manage what you shouldn't have to think about—from guest logistics to operational 
+                clarity—so your property thrives behind the scenes.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info reveal-slide-right">
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <p>tarunsrw@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-phone"></i></div>
+                        <div class="text">
+                            <h3>Phone</h3>
+                            <p>+919701929481</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/tarun-sunkara-aabbba286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form reveal-slide-left">
+                    <form id="contactForm" class="luxury-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact">Contact Number</label>
+                            <input type="tel" id="contact" name="contact" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="comments">Comments</label>
+                            <textarea id="comments" name="comments" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span class="btn-text">Submit</span>
+                            <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i></span>
+                        </button>
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="TARUNS Logo">
+                </div>
+                <div class="footer-text">
+                    <p>Let Taruns Luxury Services handle the details, so you can focus on what truly matters—unparalleled experiences and effortless living.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Taruns Luxury Services. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Google Sheets Form Submission Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const formStatus = document.getElementById('formStatus');
+            const submitBtn = form.querySelector('.submit-btn');
+            
+            // Replace with your Google Sheet Web App URL
+            // You'll need to create this script in Google Apps Script
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwoSbeJzEwV1nBH9KP1t6iZ9es1wAG9RzIMyekLeGNYYLJTdxttmyOHA_HD9QN5EcVH2Q/exec';
+            
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                
+                // Show loading state
+                submitBtn.classList.add('loading');
+                
+                // Create FormData object
+                const formData = new FormData(form);
+                
+                // Add timestamp
+                formData.append('timestamp', new Date().toISOString());
+                
+                // Send data to Google Sheets
+                fetch(scriptURL, { method: 'POST', body: formData })
+                    .then(response => {
+                        if (response.ok) {
+                            // Success message
+                            formStatus.innerHTML = '<div class="success-message">Thank you for your submission! We will be in touch soon.</div>';
+                            form.reset();
+                        } else {
+                            // Error message
+                            formStatus.innerHTML = '<div class="error-message">Something went wrong. Please try again later.</div>';
+                        }
+                        
+                        // Hide loading state
+                        submitBtn.classList.remove('loading');
+                        
+                        // Clear status message after 5 seconds
+                        setTimeout(() => {
+                            formStatus.innerHTML = '';
+                        }, 5000);
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        formStatus.innerHTML = '<div class="error-message">Something went wrong. Please try again later.</div>';
+                        
+                        // Hide loading state
+                        submitBtn.classList.remove('loading');
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
